@@ -25,15 +25,27 @@ export const metadata: Metadata = {
   },
   description: site.description,
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/logo.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     title: `${site.name} · Marshall, TX`,
     description: site.description,
     locale: "en_US",
     type: "website",
-    images: [{ url: "/logo.png" }],
+    images: [{ url: "/logo.png", alt: site.name }],
+  },
+  twitter: {
+    card: "summary",
+    title: `${site.name} · Marshall, TX`,
+    description: site.description,
+    images: ["/logo.png"],
   },
 };
 

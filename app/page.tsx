@@ -5,8 +5,19 @@ import { amenities, site } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="site-shell grid items-center gap-10 py-14 md:grid-cols-[1.15fr_0.85fr] md:py-20 lg:py-24">
+      <section className="relative isolate min-h-[32rem] overflow-hidden border-b border-line md:min-h-[38rem]">
+        <Image
+          src="/images/hero-home.jpg"
+          alt="Sunset over Cowboy Truck Stop 2 — Mobil pumps, diesel lanes, and the lot"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_60%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/80 to-navy-deep/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/75 via-transparent to-navy-deep/25" />
+
+        <div className="site-shell relative z-10 grid items-center gap-10 py-16 md:grid-cols-[1.2fr_0.8fr] md:py-24 lg:py-28">
           <div>
             <p className="eyebrow reveal">I-20 · Marshall, Texas</p>
             <h1 className="font-display reveal reveal-delay-1 mt-4 max-w-xl text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
@@ -46,16 +57,16 @@ export default function HomePage() {
             </dl>
           </div>
 
-          <div className="reveal reveal-delay-2 flex justify-center">
+          <div className="reveal reveal-delay-2 hidden justify-center md:flex">
             <div className="relative">
               <div className="absolute inset-6 rounded-full bg-red/20 blur-3xl" />
               <Image
                 src="/logo.png"
                 alt={site.name}
-                width={520}
-                height={520}
+                width={420}
+                height={420}
                 priority
-                className="relative mx-auto w-full max-w-[420px] drop-shadow-2xl"
+                className="relative mx-auto h-auto w-full max-w-[360px] drop-shadow-2xl"
               />
             </div>
           </div>
@@ -156,14 +167,24 @@ export default function HomePage() {
             </div>
           </div>
           <div className="card overflow-hidden">
-            <iframe
-              title="Map of Cowboy Truck Stop 2"
-              src={site.maps.embed}
-              className="h-72 w-full border-0 md:h-80"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+            <Image
+              src="/images/lot-highway.jpg"
+              alt="Aerial view of Cowboy Truck Stop 2 beside I-20 in Marshall"
+              width={1200}
+              height={800}
+              className="h-72 w-full object-cover md:h-80"
             />
           </div>
+        </div>
+
+        <div className="card mt-8 overflow-hidden">
+          <iframe
+            title="Map of Cowboy Truck Stop 2"
+            src={site.maps.embed}
+            className="h-72 w-full border-0 md:h-80"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
     </>
