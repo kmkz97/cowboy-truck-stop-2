@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { NoticeBanner } from "@/components/NoticeBanner";
 import { navLinks, site } from "@/lib/site";
 
 export function Header() {
@@ -27,9 +28,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-[color-mix(in_srgb,var(--navy-deep)_82%,transparent)] backdrop-blur-md">
+      <NoticeBanner />
       <div className="hidden border-b border-line bg-navy-deep/80 text-tan md:block">
         <div className="site-shell flex items-center justify-between py-2 text-xs tracking-wide">
-          <p>Open 24 hours · {site.exit}</p>
+          <p>Temporarily closed · {site.exit}</p>
           <a href={`tel:${site.phone.raw}`} className="hover:text-cream">
             {site.phone.display}
           </a>
