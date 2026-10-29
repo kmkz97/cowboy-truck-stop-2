@@ -31,7 +31,7 @@ export function Header() {
       <NoticeBanner />
       <div className="hidden border-b border-line bg-navy-deep/80 text-tan md:block">
         <div className="site-shell flex items-center justify-between py-2 text-xs tracking-wide">
-          <p>Temporarily closed · {site.exit}</p>
+          <p>Open 24 hours · {site.exit}</p>
           <a href={`tel:${site.phone.raw}`} className="hover:text-cream">
             {site.phone.display}
           </a>

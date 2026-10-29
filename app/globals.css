@@ -9,6 +9,7 @@
   --tan: #c4b396;
   --red: #b42318;
   --red-deep: #8f1c14;
+  --green: #2f6b3a;
   --star: #c43c2c;
   --line: rgba(243, 234, 216, 0.14);
   --surface: rgba(26, 39, 68, 0.72);
@@ -24,6 +25,7 @@
   --color-tan: var(--tan);
   --color-red: var(--red);
   --color-red-deep: var(--red-deep);
+  --color-green: var(--green);
   --color-star: var(--star);
   --color-line: var(--line);
   --color-surface: var(--surface);
