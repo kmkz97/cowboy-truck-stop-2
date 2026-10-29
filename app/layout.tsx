@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
-import { Alfa_Slab_One, Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const slab = Alfa_Slab_One({
+const slab = localFont({
+  src: "./fonts/alfa-slab-one-latin-400.woff2",
   variable: "--font-slab",
-  subsets: ["latin"],
   weight: "400",
+  display: "swap",
 });
 
-const body = Source_Sans_3({
+const body = localFont({
+  src: [
+    { path: "./fonts/source-sans-3-latin-400.woff2", weight: "400" },
+    { path: "./fonts/source-sans-3-latin-500.woff2", weight: "500" },
+    { path: "./fonts/source-sans-3-latin-600.woff2", weight: "600" },
+    { path: "./fonts/source-sans-3-latin-700.woff2", weight: "700" },
+  ],
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
